@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{#if title}}{{ title }} | {{/if}}{{ site.title }}</title>
+	<description>{{#if description}}{{ description }}{{else}}{{ site.description }}{{/if}}</description>
+	<link href="/assets/styles/main.css" rel="stylesheet">
+</head>
+<body>
+	<div class="o-Site">
+		{{> header}}
+
+		<main class="o-Site__main">
+			<div class="u-container">
+				{{> body}}
+			</div>
+		</main>
+
+		{{> footer}}
+		<script src="/assets/js/main.js"></script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+@use '../config';
+
+.c-Header {
+	color: config.c(text, header);
+	background: config.c(background, header);
+}

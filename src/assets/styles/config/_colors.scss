@@ -1,0 +1,38 @@
+/* https://thoughtbot.com/blog/attempting-to-corral-colors-with-a-sass-function */
+
+$_base: (
+	brand-primary:#6b9cdd,
+	white:        #ffffff,
+	black:        #000000,
+	gray:         #cccccc,
+);
+
+$_components: (
+	header: (
+    background:  map-get($_base, gray),
+    text:        map-get($_base, black),
+
+    dark-theme: (
+			background: map-get($_base, black),
+			text:       map-get($_base, white),
+    )
+	),
+	footer: (
+		background: map-get($_base, white),
+		text:       map-get($_base, black),
+	)
+);
+
+$_colors: map-merge($_base, $_components);
+
+@function c($name, $component: null, $theme: null) {
+	@if ($component and $theme) {
+		@return map-get(map-get(map-get($_colors, $component), $theme), $name);
+	}
+	@else if ($component) {
+		@return map-get(map-get($_colors, $component), $name);
+	}
+	@else {
+		@return map-get($_colors, $name);
+	}
+}

@@ -1,0 +1,14 @@
+$_z: (
+  modal:           200,
+  navigation:      100,
+  base:            1,
+	bottomless-pit: -1000,
+);
+
+@function z($index) {
+  @return map-get($_z, $index);
+}
+
+@mixin z($index) {
+  z-index: z($index);
+}

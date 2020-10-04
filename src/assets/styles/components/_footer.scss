@@ -1,0 +1,6 @@
+@use '../config';
+
+.c-Footer {
+	color: config.c(text, footer);
+	background: config.c(background, footer);
+}

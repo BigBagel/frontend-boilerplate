@@ -1,0 +1,17 @@
+$_breakpoints: (
+	xsmall: 320px,
+	small:  480px,
+	medium: 768px,
+	large:  1024px,
+	xlarge: 1200px,
+);
+
+@use 'sass-mq/mq' with (
+	$mq-breakpoints: $_breakpoints,
+);
+
+@forward 'sass-mq/mq';
+
+@function breakpoint($breakpoint) {
+  @return map-get($_breakpoints, $breakpoint);
+}
