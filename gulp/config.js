@@ -8,15 +8,15 @@ const production = !!argv.production;
 const paths = {
 	dist: './dist/',
 	views: {
-		src: './src/**/*.html',
-		pages: './src/',
-		layouts: './src/views/layouts/',
-		partials: './src/views/partials/',
-		data: './src/views/data/',
-		helpers: './src/views/helpers/',
+		src: './src/pages/**/*.{html,hbs,handlebars}',
+		pages: './src/pages/',
+		layouts: './src/layouts/',
+		partials: './src/partials/',
+		data: './src/data/',
+		helpers: './src/helpers/',
 		dist: './dist/',
-		watch: './src/**/*.html',
-		refresh: './src/views/{layouts,partials,helpers,data}/**/*',
+		watch: './src/pages/**/*.{html,hbs,handlebars}',
+		refresh: './src/{layouts,partials,helpers,data}/**/*',
 	},
 	styles: {
 		src: './src/assets/styles/main.{scss,sass}',
